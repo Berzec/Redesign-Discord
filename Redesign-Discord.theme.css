@@ -191,6 +191,11 @@
 .wrapper_bd2abe.minimum_ebf000 /* private call */ {
 	background: var(--bg-4);
 }
+
+.ChannelDms-channelpopout-popout {
+	background-color: var(--bg-1) !important;
+}
+
 .mainCard__8a660 /* forum post */ {
 	background: var(--bg-3);
 }
@@ -287,6 +292,53 @@ rect[fill='#23a55a'] {
 	height: 48px;
 	border-radius: var(--roundness-xl) var(--roundness-xl) 0 0;
 }
+.wrapper__09ecc:hover {
+	background-color: var(--bg-4) !important;
+	border-radius: 8px;
+}
+
+/* textbox chat thing */
+
+:root {
+	--main-textarea-min-height: 48px;
+	--app-bar-size: 80px;
+}
+
+/* typing indicator */
+
+.typing__6fd1d {
+	width: 110%;
+	bottom: 94%;
+	padding-right: 8px;
+	padding-left: 4%;
+	margin-left: -5%;
+	background-color: var(--bg-3);
+	border-bottom-left-radius: var(--radius);
+	box-sizing: border-box;
+}
+
+/* chat textbox input field (where you type messages)*/
+
+.form__13a2c .channelTextArea__56a36{
+	--textarea-margin: calc( calc(var(--app-bar-size) - var(--main-textarea-min-height)) / 2 );
+	position: sticky;
+	width: 101%;
+	margin-left: -15px;
+	border-top: var(--bg-4) 10px;
+	margin-top: 0%;
+	margin-bottom: 0%;
+	box-sizing: border-box;
+	z-index: 100;
+}
+.form__13a2c:before {
+	display: none;
+}
+.form__13a2c .textArea__74543 {
+	height: var(--main-textarea-min-height);
+	min-height: var(--main-textarea-min-height);
+}
+
+
 .wrapper_bd2abe.minimum_ebf000 ~ .content__1a4fe .container__93316::before /* remove when in private call */ {
 	display: none;
 }
@@ -525,50 +577,6 @@ button.button_afdfd9 /* small buttons */,
 	margin-top: calc(var(--window-title-bar) /6)
 }
 
-/* window controls */
-
-/*
-
-[class^='winButton'] > svg {
-	display: none;
-}
-[class^='winButton'] {
-	background: none !important;
-	top: 0;
-	width: calc(var(--spacing) + 8px);
-	height: calc(var(--spacing) + 8px);
-	margin: -2px 4px 0px 0px;
-}
-[class^='winButtonClose'] {
-	margin: -2px calc(var(--spacing) - 4px) 0px 0px;
-}
-[class^='winButton']::after {
-	content: '';
-	height: 12px;
-	width: 12px;
-	border-radius: 12px;
-}
-[class^='winButton']:hover::after {
-	filter: brightness(0.8);
-}
-[class^='winButton']:active::after {
-	transform: scale(0.9);
-}
-[class^='winButtonClose']::after {
-	background-color: hsl(350, 50%, 50%) !important;
-}
-[class^='winButtonMinMax']:nth-child(3)::after {
-	background-color: hsl(150, 50%, 50%) !important;
-}
-[class^='winButtonMinMax']:nth-child(4)::after {
-	background-color: hsl(50, 50%, 50%) !important;
-}
-
-*/
-
-
-
-
 
 
 /* window controls (replaces the one above) */
@@ -769,7 +777,7 @@ path[d="M10.56 1.1c-.46.05-.7.53-.64.98.18 1.16-.19 2.2-.98 2.53-.8.33-1.79-.15-
 	--background-modifier-hover: var(--hover);
 	--background-modifier-selected: var(--active);
 	--background-nested-floating: var(--primary-630);
-	--background-primary: var(--bg-4);
+	--background-primary: var(--bg-3);
 	--background-secondary: var(--bg-3);
 	--background-secondary-alt: var(--bg-3);
 	--background-tertiary: var(--bg-3);
@@ -851,7 +859,7 @@ path[d="M10.56 1.1c-.46.05-.7.53-.64.98.18 1.16-.19 2.2-.98 2.53-.8.33-1.79-.15-
 	--channel-icon: var(--text-4);
 	--channel-text-area-placeholder: var(--text-5);
 	--channels-default: var(--text-4);
-	--channeltextarea-background: var(--bg-3);
+	--channeltextarea-background: var(--bg-4);
 	--chat-background: var(--primary-600);
 	--chat-border: var(--primary-700);
 	--chat-input-container-background: var(--primary-600);
@@ -934,12 +942,8 @@ path[d="M10.56 1.1c-.46.05-.7.53-.64.98.18 1.16-.19 2.2-.98 2.53-.8.33-1.79-.15-
 	--profile-gradient-message-input-border: hsl(var(--primary-500-hsl) / 0.48);
 	--profile-gradient-note-background: hsl(var(--black-500-hsl) / 0.3);
 	--profile-gradient-overlay: hsl(var(--black-500-hsl) / 0.6);
-	--profile-gradient-overlay-synced-with-user-theme: hsl(
-		var(--black-500-hsl) / 0.8
-	);
-	--profile-gradient-profile-body-background-hover: hsl(
-		var(--white-500-hsl) / 0.16
-	);
+	--profile-gradient-overlay-synced-with-user-theme: hsl(var(--black-500-hsl) / 0.8);
+	--profile-gradient-profile-body-background-hover: hsl(var(--white-500-hsl) / 0.16);
 	--profile-gradient-role-pill-background: hsl(var(--primary-660-hsl) / 0.5);
 	--profile-gradient-role-pill-border: hsl(var(--white-500-hsl) / 0.2);
 	--profile-gradient-section-box: hsl(var(--black-500-hsl) / 0.45);
@@ -1048,14 +1052,12 @@ path[d="M10.56 1.1c-.46.05-.7.53-.64.98.18 1.16-.19 2.2-.98 2.53-.8.33-1.79-.15-
 	--text-warning: var(--yellow-300);
 	--textbox-markdown-syntax: var(--primary-360);
 	--theme-locked-blur-fallback: hsl(var(--primary-700-hsl) / 0.96);
-	--user-profile-header-overflow-background: hsl(
-		var(--primary-700-hsl) / 0.5
-	);
+	--user-profile-header-overflow-background: hsl(var(--primary-700-hsl) / 0.5);
 	--voice-video-tile-blur-fallback: hsl(var(--primary-700-hsl) / 0.48);
 	--voice-video-video-tile-blur-fallback: hsl(var(--primary-700-hsl) / 0.48);
 	--white: var(--white-500);
 
-	--profile-gradient-primary-color: var(--bg-4);
+	--profile-gradient-primary-color: var(--bg-2);
 	--profile-gradient-secondary-color: var(--bg-4);
 
 	--elevation-low: none;

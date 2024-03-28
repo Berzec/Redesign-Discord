@@ -1,4 +1,4 @@
 # redesigned-discord
-just a discord theme
+brokey let me fix
 
-heavy borrowing of code from other people
+maybe 3 weeks lmao

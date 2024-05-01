@@ -1,4 +1,6 @@
-# redesign-discord
-brokey let me fix
+#Redesign Discord
+took too long to fix
 
-maybe 3 weeks lmao
+gotta fix my spaghetti code
+
+help

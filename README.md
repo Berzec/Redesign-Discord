@@ -1,7 +1,9 @@
 **Redesign Discord**
 
-took too long to fix
+this project is very tiring
 
-gotta fix my spaghetti code
+hopefully you know how to download bc explaining is hard
 
-help
+special thanks to capnkitten and refact0r
+
+based on https://betterdiscord.app/theme/midnight

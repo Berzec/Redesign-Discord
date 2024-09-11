@@ -164,7 +164,6 @@
 .member_a31c43 /* member list members */,
 .searchResultsWrap_c2b47d /* search results */,
 .searchHeader_b7c924 /* search results header */,
-.chat_a7d72e.container_f3abf4 /* message requests */,
 #app-mount .panels_a4d4d9 > div /* user panel children */,
 .container_adcaac /* vc panel */,
 .sidebarRegionScroller_c25c6d /* settings left */,
@@ -182,10 +181,16 @@
 .messageContainer_ddb5b4 /* inbox messages */,
 .messageContainer_c06487:hover /* unread inbox messages hover */,
 .recommendedServerCard_ebbdfd /* server boost card */, 
-.select_f6639d.lookFilled_f6639d, .option_f6639d /* dropdown card */ {
+.select_f6639d.lookFilled_f6639d, .option_f6639d /* dropdown card */, 
+.footer_a823cd /* user profile view full profile footer */ {
 	background-color: var(--bg-4);
 }
-
+.scroller_c2b47d.thin_c49869.scrollerBase_c49869 {
+	border-radius: var(--radius);
+	margin: 16px 8px 0 16px;
+	padding: 0;
+	overflow: hidden;
+}
 
 .mainCard_a6d69a /* forum post */,
 .navRow_be9398[data-theme=dark] /* add new account bottom */ {
@@ -505,6 +510,17 @@ path[fill='var(--white-500)'] {
 	color: var(--accent-2);
 	line-height: 16px;
 }
+/* message requests tab */
+.content_a7d72e {
+	background-color: var(--bg-3);
+}
+
+.content_a7d72e::before {
+	display: none;
+}
+.messageRequestItem_a5de62.firstItem_a5de62 {
+	border-radius: var(--radius);
+}
 
 /* remove shadows */
 #app-mount .header_b56bbc /* gif picker */ {
@@ -554,7 +570,6 @@ path[fill='var(--white-500)'] {
 }
 .chatContent_a7d72e::before /* main chat */,
 .membersWrap_cbd271::before /* member list */,
-.searchHeader_b7c924,
 .profilePanel_b433b4::before /* dm profile */,
 .container_a6d69a::before /* forums */ {
 	content: '';
@@ -633,6 +648,18 @@ a[href="https://support.discord.com"] /* hide help */
 	padding: 10px;
 }
 
+.container_a8b566,
+.scroller_a8b566.auto_c49869.scrollerBase_c49869,
+.homeWrapperNormal_d175a8.homeWrapper_d175a8 {
+	margin: 0;
+	border-radius: var(--radius);
+	padding: 0;
+	overflow: hidden;
+}
+.scroller_a8b566.scrollerBase_c49869{
+	background-color: var(--bg-4);
+}
+
 /* add rounded corners */
 .container_ee69e0 /* channel list */,
 .panels_a4d4d9 /* user panels */,
@@ -673,7 +700,11 @@ a[href="https://support.discord.com"] /* hide help */
 .authBox_b83a05 /* authenticate page and cards */,
 .list_f20a46 /* account selector */,
 .innerWrapper_c511e4 /* nitro popup */,
-.recommendedServerCard_ebbdfd /* server boost card */{
+.recommendedServerCard_ebbdfd /* server boost card */,
+.searchHeader_b7c924 /* round user panel in search */,
+.connectedAccountContainer_ab12c6 /* external link embeds in user profile */,
+.listRow_d2d6cb /* mutual friends in user profile */,
+.message_ddc613, .searchResult_ddc613 /* messages in search */ {
 	border-radius: var(--radius);
 }
 

@@ -182,7 +182,8 @@
 .messageContainer_c06487:hover /* unread inbox messages hover */,
 .recommendedServerCard_ebbdfd /* server boost card */, 
 .select_f6639d.lookFilled_f6639d, .option_f6639d /* dropdown card */, 
-.footer_a823cd /* user profile view full profile footer */ {
+.footer_a823cd /* user profile view full profile footer */,
+.none_c49869.scrollerBase_c49869 {
 	background-color: var(--bg-4);
 }
 .scroller_c2b47d.thin_c49869.scrollerBase_c49869 {
@@ -190,6 +191,12 @@
 	margin: 16px 8px 0 16px;
 	padding: 0;
 	overflow: hidden;
+}
+
+/* user profile panel mutual tab drop downs */
+.overlay_c69a7b.panel_c69a7b.overlay_a8795b {
+	background-color: var(--bg-3);
+	border-radius: var(--radius);
 }
 
 .mainCard_a6d69a /* forum post */,
@@ -704,8 +711,24 @@ a[href="https://support.discord.com"] /* hide help */
 .searchHeader_b7c924 /* round user panel in search */,
 .connectedAccountContainer_ab12c6 /* external link embeds in user profile */,
 .listRow_d2d6cb /* mutual friends in user profile */,
-.message_ddc613, .searchResult_ddc613 /* messages in search */ {
+.message_ddc613, .searchResult_ddc613 /* messages in search */,
+.body_cd82a7.inset_ac5d22 /* currently playing embed */,
+.inner_c69a7b.panel_c69a7b /* user profile panel */, 
+.wrapper_a71a1c /* server invite embed */,
+.memberInner_a31c43.layout_d808b0 /* member list hovering over user name */,
+.outer_c69a7b.biteSize_c69a7b, .inner_c69a7b.biteSize_c69a7b /* user profile panel popout summary */ {
 	border-radius: var(--radius);
+}
+/* explore discoverable channels fix */
+.footer_aa1bff,
+.gradient_aa1bff,
+.gradientHidden_aa1bff {
+	background-color: var(--bg-4);
+}
+
+/* server invite embed image fix */
+.inviteSplash_a71a1c {
+	border-radius: var(--radius) var(--radius) 0 0;
 }
 
 .messageContainer_c06487 /* inbox unread message margins */ {
@@ -774,8 +797,8 @@ a[href="https://support.discord.com"] /* hide help */
 .messageGroupWrapper_ac90a2 /* pinned messages */,
 .connectedAccountContainer_f3eb60 /* connections embed */,
 .container_e5a42d /* user badges */,
-.scrollableContainer_d0696b /* message bar */,
-.channelTextArea_a7d72e /* message bar underneath */,
+.scrollableContainer_bdf0de /* message bar */,
+.channelTextArea_bdf0de /* message bar underneath */,
 .select_f6639d /* bot dropdown select */,
 .layout_e9f61e /* members */,
 .interactive_f5eb4b /* dms */,

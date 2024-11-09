@@ -181,9 +181,9 @@
 .messageContainer_ddb5b4 /* inbox messages */,
 .messageContainer_c06487:hover /* unread inbox messages hover */,
 .recommendedServerCard_ebbdfd /* server boost card */, 
-.select_f6639d.lookFilled_f6639d, .option_f6639d /* dropdown card */, 
+.select_f6639d.lookFilled_f6639d /* dropdown card */, 
 .footer_a823cd /* user profile view full profile footer */,
-.none_c49869.scrollerBase_c49869 {
+.none_c49869.scrollerBase_c49869 /* i forgot what this is */{
 	background-color: var(--bg-4);
 }
 .scroller_c2b47d.thin_c49869.scrollerBase_c49869 {
@@ -193,14 +193,18 @@
 	overflow: hidden;
 }
 
+
 /* user profile panel mutual tab drop downs */
 .overlay_c69a7b.panel_c69a7b.overlay_a8795b {
 	background-color: var(--bg-3);
 	border-radius: var(--radius);
 }
 
+
+/* bg 3 */
 .mainCard_a6d69a /* forum post */,
-.navRow_be9398[data-theme=dark] /* add new account bottom */ {
+.navRow_be9398[data-theme=dark] /* add new account bottom */, 
+.focusLock_f9a4c9 .select_f6639d.lookFilled_f6639d /* drop down in custom status */{
 	background: var(--bg-3);
 }
 .folderIconWrapper_bc7085[style="background-color: rgba(88, 101, 242, 0.4);"] /* default color closed folders */ {
@@ -716,7 +720,13 @@ a[href="https://support.discord.com"] /* hide help */
 .inner_c69a7b.panel_c69a7b /* user profile panel */, 
 .wrapper_a71a1c /* server invite embed */,
 .memberInner_a31c43.layout_d808b0 /* member list hovering over user name */,
-.outer_c69a7b.biteSize_c69a7b, .inner_c69a7b.biteSize_c69a7b /* user profile panel popout summary */ {
+.outer_c69a7b.biteSize_c69a7b, .inner_c69a7b.biteSize_c69a7b /* user profile panel popout summary */,
+.overlay_c69a7b.biteSize_c69a7b.card_ae1fa2.activity_b8cc6d, .contentImage_dc67b6.contentImage_fa854f /* user mini popout profile panel activity embed */,
+.container_b64375 /* user badges */, 
+.logoWrapper_e881fc, .logo_e881fc, .gameArtwork_f5a23b /* game description all image */,
+.emptyState_d8cab0.friends_d8cab0 /* game description recent friends playing embed */, 
+.membershipDialog_dc8e43.membershipDialogHouse2_dc8e43 /* hypesquad house dialog */,
+.video_b8e00f /* video embeds */ {
 	border-radius: var(--radius);
 }
 /* explore discoverable channels fix */

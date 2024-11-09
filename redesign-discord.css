@@ -4,7 +4,7 @@
  * @name Redesign Discord
  * @description Discord, redesigned 
  * @author Berzec
- * @version 2.1
+ * @version 2.1.01
  *
  * @website https://github.com/Berzec
  * @invite 5W2kGk6Ku2
@@ -183,7 +183,9 @@
 .recommendedServerCard_ebbdfd /* server boost card */, 
 .select_f6639d.lookFilled_f6639d /* dropdown card */, 
 .footer_a823cd /* user profile view full profile footer */,
-.none_c49869.scrollerBase_c49869 /* i forgot what this is */{
+.none_c49869.scrollerBase_c49869 /* i forgot what this is */,
+.container_e462a4 /* discover nav menu container */,
+.guildDetails_c73cee /* discover server guild card background */ {
 	background-color: var(--bg-4);
 }
 .scroller_c2b47d.thin_c49869.scrollerBase_c49869 {
@@ -252,6 +254,12 @@ div.message_d5deea.replying_d5deea::before /* change reply message bar to neutra
 .mention_c10249 /* NEW unread pill */,
 .mentionsBar_eba0ba /* channel list new mention pill */ {
 	--status-danger: var(--accent-3);
+}
+.bottom_eba0ba .containerPadding_eba0ba {
+	padding: 16px;
+	margin-bottom: 1px;
+	transition: none;
+	animation: none;
 }
 .divider_d5deea.hasContent_d5deea.divider_c2654d.hasContent_c2654d .content_c2654d /* fix unread date divider background color */{
 	background-color: var(--bg-4);
@@ -726,14 +734,35 @@ a[href="https://support.discord.com"] /* hide help */
 .logoWrapper_e881fc, .logo_e881fc, .gameArtwork_f5a23b /* game description all image */,
 .emptyState_d8cab0.friends_d8cab0 /* game description recent friends playing embed */, 
 .membershipDialog_dc8e43.membershipDialogHouse2_dc8e43 /* hypesquad house dialog */,
-.video_b8e00f /* video embeds */ {
-	border-radius: var(--radius);
+.video_b8e00f /* video embeds */,
+.navItem_e462a4 /* discover navigation menu buttons */,
+.card_e0fe28.cardStaticHeight_e0fe28.applyToJoinContainer_e0fe28, .card_e32e6f.card_c73cee.clickable_e32e6f /* discover guilds server cards */,
+.container_b97772 /* discover quests top banner */,
+.searchBar_e06425 /* discover search bar */,
+.container_e462a4 /* discover navigation menu container */,
+.wrapper_f7e168 /* discover server card three dot menu */,
+.notice_dd5a33 /* preview mode notice at top */,
+.pill_e6f2d0, .pill_f9575e/* server role badge */,
+.reaction_ec6b19, .shakeReaction_ec6b19, .burstGlow_ec6b19 /* message reactions */,
+.container_a3d172 /* activity has ended embed */ {
+	border-radius: var(--radius) !important;
 }
 /* explore discoverable channels fix */
 .footer_aa1bff,
 .gradient_aa1bff,
 .gradientHidden_aa1bff {
 	background-color: var(--bg-4);
+}
+/* start an activity embed */
+.imgContainer_ef615b {
+	border-radius: var(--radius) var(--radius) 0 0;
+}
+.content_ef615b {
+	border-radius: 0 0 var(--radius) var(--radius);
+}
+
+.notice_dd5a33 /* preview mode notice at top */ {
+	margin-bottom: var(--spacing);
 }
 
 /* server invite embed image fix */
@@ -1154,25 +1183,9 @@ button.button_f67531 /* make user panel buttons round */ {
 	background: var(--hover);
 	border-radius: var(--radius);
 }
-.top_eba0ba > .containerPadding_eba0ba {
-	padding: 16px;
-	margin-top: -40px;
-	transition: none;
-	animation: none;
+.top_eba0ba {
+	margin-top: var(--spacing);
 }
-.top_eba0ba:hover > .containerPadding_eba0ba:hover {
-	margin-top: -12px;
-}
-.bottom_eba0ba > .containerPadding_eba0ba {
-	padding: 16px;
-	margin-bottom: -40px;
-	transition: none;
-	animation: none;
-}
-.bottom_eba0ba > .containerPadding_eba0ba:hover {
-	margin-bottom: -12px;
-}
-
 .theme-light {
 	--text-link: var(--accent-5);
 }

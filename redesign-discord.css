@@ -4,7 +4,7 @@
  * @name Redesign Discord
  * @description Discord, redesigned 
  * @author Berzec
- * @version 2.1.02
+ * @version 2.1.02.a
  *
  * @website https://github.com/Berzec
  * @invite 5W2kGk6Ku2
@@ -742,6 +742,14 @@ a[href="https://support.discord.com"] /* hide help */
 .gradient_d71945,
 .gradientHidden_f8ec41 {
 	background-color: var(--bg-4);
+}
+.footer_d71945 {
+	padding-top: 5px;
+}
+.gradient_d71945 {
+	height: var(--spacing);
+	top: calc(-1 * var(--spacing));
+
 }
 .contents_dd4f85.upsellButton_bb33d5 {
  	color: var(--text-dark);

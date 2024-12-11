@@ -4,7 +4,7 @@
  * @name Redesign Discord
  * @description Discord, redesigned 
  * @author Berzec
- * @version 2.1.02.a
+ * @version 2.1.02.b
  *
  * @website https://github.com/Berzec
  * @invite 5W2kGk6Ku2
@@ -269,6 +269,9 @@ div.message_d5deea.replying_d5deea::before /* change reply message bar to neutra
 	background-color: var(--accent-x);
 }
 
+.messageListItem_d5deea .message_d5deea.cozyMessage_d5deea.groupStart_d5deea.wrapper_f9f2ca.cozy_f9f2ca.zalgo_f9f2ca /* messages top margins */ {
+	margin-top: var(--spacing) !important;
+}
 .message_d5deea.mentioned_d5deea:before /* mention message left edge */,
 .botTagOP_a02df3 /* OP tag */ {
 	background: var(--accent-3);

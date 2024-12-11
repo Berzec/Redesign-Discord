@@ -4,7 +4,7 @@
  * @name Redesign Discord
  * @description Discord, redesigned 
  * @author Berzec
- * @version 2.1.02.b
+ * @version 2.1.02.c
  *
  * @website https://github.com/Berzec
  * @invite 5W2kGk6Ku2
@@ -1063,7 +1063,7 @@ button.button_dd4f85 /* small buttons */,
 }
 .typeWindows_a934d8 .winButton_a934d8.winButtonMinMax_a934d8:nth-last-of-type(2):before {
   background-color: var(--window-button-max);
-  -webkit-mask-image: url(window-max.svg);
+  -webkit-mask-image: url(https://berzec.github.io/images/window-max.svg);
   -webkit-mask-repeat: no-repeat;
 }
 .typeWindows_a934d8 .winButton_a934d8.winButtonMinMax_a934d8:nth-last-of-type(1):hover:after {
@@ -1071,7 +1071,7 @@ button.button_dd4f85 /* small buttons */,
 }
 .typeWindows_a934d8 .winButton_a934d8.winButtonMinMax_a934d8:nth-last-of-type(1):before {
   background-color: var(--window-button-min);
-  -webkit-mask-image: url(window-min.svg);
+  -webkit-mask-image: url(https://berzec.github.io/images/window-min.svg);
   -webkit-mask-repeat: no-repeat;
 }
 .typeWindows_a934d8 .winButton_a934d8.winButtonClose_a934d8:hover:after {
@@ -1079,7 +1079,7 @@ button.button_dd4f85 /* small buttons */,
 }
 .typeWindows_a934d8 .winButton_a934d8.winButtonClose_a934d8:before {
   background-color: var(--window-button-close);
-  -webkit-mask-image: url(window-close.svg);
+  -webkit-mask-image: url(https://berzec.github.io/images/window-close.svg);
   -webkit-mask-repeat: no-repeat;
   align-items:end;
 }

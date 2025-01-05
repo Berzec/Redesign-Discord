@@ -4,14 +4,19 @@
  * @name Redesign Discord
  * @description Discord, redesigned 
  * @author Berzec
- * @version 2.1.02.c
+ * @version 2.1.02.d
  *
  * @website https://github.com/Berzec
  * @invite 5W2kGk6Ku2
 */
 
 
+/* 
+CURRENT CHANGELOG FOR VERSION 2.1.02.d
 
+updated window controls due to website change
+numerous bug fixes
+*/
 
 
 
@@ -259,6 +264,7 @@ div.message_d5deea.replying_d5deea::before /* change reply message bar to neutra
 }
 .divider_d5deea.hasContent_d5deea.divider_c2654d.hasContent_c2654d .content_c2654d /* fix unread date divider background color */{
 	background-color: var(--bg-4);
+	color: var(--text-light);
 }
 /* add color to unread divider */
 .divider_d5deea /* unread divider */,
@@ -347,15 +353,18 @@ path[fill='var(--white-500)'] {
 
 /* typing indicator */
 
-.typing_d7ebeb {
-	width: 100%;
-	bottom: 55px;
-	padding-right: 8px;
-	padding-left: 4%;
-	margin-left: -5%;
-	background-color: none;
-	border-bottom-left-radius: var(--radius);
-	box-sizing: border-box;
+
+.form_a7d72e .typing_d7ebeb {
+	position: absolute;
+	width: calc(100% - var(--scrollbar-width));
+	top: -16px;
+	left: 0;
+	padding-left: var(--spacing);
+	margin-top: 0;
+	transition: 200ms ease-in-out;
+}
+.typing_d7ebeb.base_d7ebeb {
+	background-color: var(--bg-4);
 }
 /* slowmode is enabled tab (same as typing indicator) */
 .cooldownWrapper_d7ebeb {
@@ -366,12 +375,30 @@ path[fill='var(--white-500)'] {
 	border-radius: var(--radius);
 }
 
+/* bot commands button dm */
+
+.entryPointButtonContainer_a7d72e {
+	margin-bottom: 10px;
+}
+.contentWrapper_f7506e, .overviewContainerNoVideo_e80fe9, .profileAndVideoContainer_e80fe9 {
+	border-radius: var(--radius) !important;
+}
+.commandContainer_f37ac2, .commandContainer_f37ac2 .command_f37ac2:first-child {
+	border-top-left-radius: var(--radius) !important;
+	border-top-right-radius: var(--radius) !important;
+}
+.commandContainer_f37ac2, .commandContainer_f37ac2 .command_f37ac2:last-child {
+	border-bottom-left-radius: var(--radius) !important;
+	border-bottom-right-radius: var(--radius) !important;
+}
+
+
 /* chat textbox input field (where you type messages)*/
 
 .form_a7d72e .channelTextArea_a7d72e {
 	position: sticky;
 	border-top: var(--bg-4) 10px;
-	margin-bottom: 10px;
+	margin-bottom: var(--spacing);
 	width: 100%;
 	box-sizing: border-box;
 	z-index: 100;
@@ -384,7 +411,7 @@ path[fill='var(--white-500)'] {
 	padding: none;
 }
 .channelAppLauncher_df39bd {
-	margin-bottom: 10px;
+	margin-bottom: var(--spacing);
 }
 
 /* jump to present bar */
@@ -601,6 +628,11 @@ path[fill='var(--white-500)'] {
 .searchResultsWrap_c2b47d /* search results */ {
 	border-radius: var(--radius);
 }
+/* search result filters  */
+.searchFilter_b0fa94, .searchAnswer_b0fa94{
+	border-radius: var(--radius);
+	margin-right: 5px;
+}
 
 .wrapper_d880dc.minimum_d880dc ~ .content_a7d72e .container__93316::before /* remove when in private call */ {
 	display: none;
@@ -618,6 +650,7 @@ a[href="https://support.discord.com"] /* hide help */
 	order: 1;
 	margin: 0 4px 0 12px;
 }
+
 .chat_a7d72e:has(.searchResultsWrap_c2b47d) .searchBar_a46bef {
 	width: 394px !important;
 	margin-left: calc(var(--spacing) + 8px);
@@ -678,6 +711,7 @@ a[href="https://support.discord.com"] /* hide help */
 }
 
 /* add rounded corners */
+/* border radius */
 .container_ee69e0 /* channel list */,
 .panels_a4d4d9 /* user panels */,
 .privateChannels_f0963d /* dms list */,
@@ -737,7 +771,9 @@ a[href="https://support.discord.com"] /* hide help */
 .container_cc7b67 /* default permissions roles server settings */,
 .upsellContainer_bb33d5 /* get boosted banner stickers server settings */,
 .card_ea2a21.cardPrimary_a298b8.card_a298b8.editable_a298b8, .emptyStateCard_fab929.cardPrimary_a298b8.card_a298b8.editable_a298b8 /* app integration cards server settings */, 
-.section_cd82a7 /* friends activity embed miniture */ {
+.section_cd82a7 /* friends activity embed miniture */, 
+.base_bcc24e, .autocomplete_bcc24e.autocomplete_bea0d0.autocompleteAttached_bea0d0, .autocomplete_bcc24e.outerWrapper_fe2299 /* auto complete in chat commands idk */, 
+.pollContainer_b558d0 /* polls card */ {
 	border-radius: var(--radius) !important;
 }
 /* explore discoverable channels fix */
@@ -1063,7 +1099,7 @@ button.button_dd4f85 /* small buttons */,
 }
 .typeWindows_a934d8 .winButton_a934d8.winButtonMinMax_a934d8:nth-last-of-type(2):before {
   background-color: var(--window-button-max);
-  -webkit-mask-image: url(https://berzec.github.io/images/window-max.svg);
+  -webkit-mask-image: url(https://berzec.github.io/icons/redesign-discord-icons/window-max.svg);
   -webkit-mask-repeat: no-repeat;
 }
 .typeWindows_a934d8 .winButton_a934d8.winButtonMinMax_a934d8:nth-last-of-type(1):hover:after {
@@ -1071,7 +1107,7 @@ button.button_dd4f85 /* small buttons */,
 }
 .typeWindows_a934d8 .winButton_a934d8.winButtonMinMax_a934d8:nth-last-of-type(1):before {
   background-color: var(--window-button-min);
-  -webkit-mask-image: url(https://berzec.github.io/images/window-min.svg);
+  -webkit-mask-image: url(https://berzec.github.io/icons/redesign-discord-icons/window-min.svg);
   -webkit-mask-repeat: no-repeat;
 }
 .typeWindows_a934d8 .winButton_a934d8.winButtonClose_a934d8:hover:after {
@@ -1079,7 +1115,7 @@ button.button_dd4f85 /* small buttons */,
 }
 .typeWindows_a934d8 .winButton_a934d8.winButtonClose_a934d8:before {
   background-color: var(--window-button-close);
-  -webkit-mask-image: url(https://berzec.github.io/images/window-close.svg);
+  -webkit-mask-image: url(https://berzec.github.io/icons/redesign-discord-icons/window-close.svg);
   -webkit-mask-repeat: no-repeat;
   align-items:end;
 }

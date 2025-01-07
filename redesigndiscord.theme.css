@@ -2,7 +2,7 @@
  * @name Redesign Discord
  * @description Discord, redesigned 
  * @author Berzec
- * @version 3.0.00.beta1
+ * @version 3.0.00.beta2
  *
  * @website https://github.com/Berzec
  * @invite 5W2kGk6Ku2
@@ -29,7 +29,7 @@ light mode
 	--font: 'gg sans';
 
 	/* the original, holy, reference blue */
-  	--original-blue: rgb(80, 130, 250);
+  	--original-blue: rgba(86, 128, 212, 0.8);
 
 	/* amount of spacing and padding */
 	--spacing: 15px;
@@ -104,6 +104,14 @@ light mode
 	--window-button: hsl(0,0%,100%,0.1);
 	--window-button-inactive: hsl(0,0%,100%,0.05);
 
+	/* DISCORD VARIABLES */
+
+	--scrollbar-auto-thumb: var(--bg-5);
+	--scrollbar-auto-track: transparent;
+	--scrollbar-thin-thumb: var(--bg-5);
+	--scrollbar-thin-track: transparent;
+
+	--green-430: var(--original-blue);
 }
 
 
@@ -112,6 +120,8 @@ light mode
 .panels_a4d4d9, .container_b2ca13 /* account and settings at bottom */,
 .chat_a7d72e /* general chat area, all */,
 .chatContent_a7d72e /* actual chat */,
+.container_c2739c /* friends */,
+.applicationStore_cecc86 /* nitro */,
 .privateChannels_f0963d /* dm list */, 
 .container_ee69e0 /* server channel list */,
 .animatedContainer_fd6364 /* server channel list banner */,
@@ -120,15 +130,18 @@ light mode
 .title_a7d72e /* top header chat */,
 .wrapper_faf5ab /* follow a channel */,
 .container_cbd271 /* server member list */,
+.peopleListItem_d51464 /* friends list */,
 .container_a6d69a /* forums */,
 .scrollableContainer_bdf0de.themedBackground_bdf0de, .channelTextArea_a7d72e.channelTextArea_bdf0de /* chat text field */,
 .button_df39bd /* app and command launcher next to chat text field */,
 .searchBar_a46bef /* search bar right */,
 .searchBarComponent_f0963d /* search bar left */,
+.inner_c18ec9, .searchBar_e0840f /* search bar friends */,
 .channel_c91bad, .listRow_d2d6cb, .link_d8bfb3 /* channels and dm links */, 
 .searchResultsWrap_c2b47d /* search results */,
 .item_a0 /* search results new old relevant */,
-.searchResult_ddc613 /* search results messages */ {
+.searchResult_ddc613 /* search results messages */,
+.itemCard_f02fcf /* embeds and cards */ {
     border-radius: var(--radius) !important;
 }
 
@@ -146,7 +159,17 @@ light mode
 .content_a7d72e /* chat and user profile */ {
     margin: var(--spacing) var(--spacing) var(--spacing) 0;
 }
-
+.container_c2739c /* friends */,
+.applicationStore_cecc86 /* nitro */  {
+	margin: 0 var(--spacing) var(--spacing) 0;
+}
+.container_c2739c .container_fc4f04.themed_fc4f04 /* fix friends header padding issue */,
+.subtitleContainer_a7d72e .container_fc4f04.themed_fc4f04 /* fix chat header padding issue */ {
+	padding: 8px;
+}
+.container_fc4f04.themed_fc4f04 /* message requests header */ {
+	padding-right: calc(var(--spacing) + 8px);
+}
 .subtitleContainer_a7d72e /* top header chat */ {
     margin-right: var(--spacing);
 }
@@ -197,7 +220,9 @@ light mode
 .content_a7d72e, 
 .chat_a7d72e, 
 .sidebar_a4d4d9,
-.typeWindows_a934d8 {
+.typeWindows_a934d8,
+.container_c2739c, .container_fc4f04, .container_bf550a,
+.scroller_a8b566 {
     background-color: var(--bg-3) !important;
 }
 
@@ -213,13 +238,15 @@ light mode
 .itemsContainer_fea3ef, 
 .footer_d71945,
 .container_a6d69a,
-.searchResultsWrap_c2b47d, .searchHeader_b7c924 {
+.searchResultsWrap_c2b47d, .searchHeader_b7c924,
+.itemCard_f02fcf {
     background-color: var(--bg-4) !important;
 }
 /* background color more top */
 .scrollableContainer_bdf0de,
 .button_df39bd,
-.section_d8eba3 {
+.section_d8eba3,
+.searchBar_a46bef, .searchBarComponent_f0963d, .inner_c18ec9 {
 	background-color: var(--bg-5) !important;
 }
 
@@ -353,12 +380,17 @@ html:not(.app-focused) .typeWindows_a934d8 .winButton_a934d8.winButtonMinMax_a93
 .children_fc4f04::after {
     display: none;
 }
+/* remove random lines in friends list */
+.tabBody_c2739c::before {
+	display: none;
+}
 /* remove dm list search shadow */
 .searchBar_f0963d {
     box-shadow: none;
 }
-
-
-
-
-
+.anchor_af404b /* hide help */ {
+	display: none;
+}
+.peopleListItem_d51464 /* friends member list border fix */ {
+	border: none;
+}

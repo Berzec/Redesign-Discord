@@ -1,0 +1,135 @@
+/**
+ * @name Redesign Discord
+ * @description Discord, redesigned 
+ * @author Berzec
+ * @version 2.2
+ *
+ * @website https://github.com/Berzec
+ * @invite 5W2kGk6Ku2
+*/
+
+
+
+/* NOTICE - wonky in light mode, please activate dark mode */
+
+
+
+/* 
+CURRENT CHANGELOG FOR VERSION 2.1.02.e
+
+theme now works in betterdiscord
+
+*/
+
+
+
+@import url("https://berzec.github.io/Redesign-Discord/redesigndiscord.theme.css");
+
+
+
+/* roots and variables, change if you wanna */
+:root {
+	/* font, dont change unless you wanna */
+	--font: 'gg sans';
+
+	/* the original, holy, reference blue */
+  	--original-blue: rgb(100, 150, 250);
+
+	/* amount of spacing and padding */
+	--spacing: 15px;
+
+  	/* round corner standard */ 
+	--radius: 15px;
+	--radius-medium: 8px;
+	--radius-small: 5px;
+
+	/* color of links */
+	--accent-1: #5680d4;
+	/* color of unread dividers and some indicators */
+	--accent-2: #5680d4;
+	/* color of accented buttons */
+	--accent-3: rgba(255, 255, 255,0.1);
+	/* color of accented buttons when hovered */
+	--accent-4: rgba(255, 255, 255,0.2);
+	/* color of accented buttons when clicked */
+	--accent-5: rgba(255, 255, 255,0.2);
+	/* color of mentions and messages that mention you */
+	--mention: rgba(100, 150, 250, 0.1);
+	/* color of replying message */
+	--reply: rgba(150, 175, 255, 0.1);
+	/* color of mentions and messages that mention you when hovered */
+	--mention-hover: rgba(100, 150, 250, 0.2);
+  	/* color of specific buttons */
+  	--accent-x: rgba(86, 128, 212, 0.8);
+
+	/* color of bright text */
+	--text-light: #e0e0e0;
+	/* color of icon buttons and channels */
+	--text-lightgrey: rgba(200, 200, 200, 0.9);
+	/* color of muted channels/chats and timestamps */
+	--text-grey: rgba(150, 150, 150, 0.9);
+	/* color of text on bright background */
+	--text-dark: rgba(30, 50, 100, 0.9);
+
+	/* color of dark buttons when clicked */
+	--bg-1: rgba(34, 38, 46, 1);
+	/* color of dark buttons */
+	--bg-2: rgba(34, 38, 46, 1);
+	/* color of spacing around panels and secondary elements */
+	--bg-3: #131313;
+	/* main background color */
+	--bg-4: #1a1a1a;
+	/* color of channels and icon buttons when hovered */
+	--hover: rgba(40, 40, 40, 0.9);
+	/* color of channels and icon buttons when clicked or selected */
+	--active: rgba(100, 150, 250, 0.1);
+	/* color of messages when hovered */
+	--message-hover: rgba(255, 255, 255, 0.06);
+	/* color of replying message when hovered */
+	--reply-hover: rgba(100, 150, 250, 0.2);
+	/* color of switches when clicked */
+	--active-switch: rgba(86, 128, 212, 0.8);
+
+	/* window control stuff */
+	--window-title-bar: calc(var(--spacing) + 14px);
+	--window-button-min: #ffbd44;
+	--window-button-max: #00ca4e;
+	--window-button-close: #ff605c;
+
+	/* no idea what this is but you need it */
+	--default-animation: cubic-bezier(0.4,0,0.2,1);
+	--default-time: 250ms;
+	--window-button: hsl(0,0%,100%,0.1);
+	--window-button-inactive: hsl(0,0%,100%,0.05);
+
+	/* animations */
+	/* ALL ANIMATIONS CAN BE DISABLED WITH REDUCED MOTION IN DISCORD SETTINGS */
+	--list-item-transition: 0.2s ease; /* channels/members/settings hover transition */
+	--unread-bar-transition: 0.2s ease; /* unread bar moving into view transition */
+	--icon-spin-transition: 1s ease; /* round icon button spin (settings, emoji, etc.) */
+
+
+
+
+
+	/* settings modal roots */
+	--settingsmodalbackground:  transparent;		/* default:	transparent			(lowest bg color of changed windows, change it in case another theme turns them transparent)	*/
+	--settingsmodalwidth: 		960;				/* default:	960px	add px		(width of the settings modal, px/vw)															*/
+	--settingsmodalheight: 		87;					/* default:	80vh	add vh		(height of the settings modal, px/vh)															*/
+
+
+	--settingswidth: 		var(--settingsmodalwidth);
+	--settingsheight: 		var(--settingsmodalheight);
+	--settingsbackground: 	var(--settingsmodalbackground);
+
+	
+	--settingswidth_v: 		min(calc(1px * var(--settingswidth_s, var(--settingswidth))), 99vw);
+	--settingsheight_v: 		min(calc(1vh * var(--settingsheight_s, var(--settingsheight))), 99vh);
+	--settingsbackground_v: 	var(--settingsbackground_s, var(--settingsbackground));
+
+	
+	--font-primary: var(--font), 'Noto Sans', 'Helvetica Neue', Helvetica, Arial,
+		sans-serif;
+	--font-display: var(--font), 'Noto Sans', 'Helvetica Neue', Helvetica, Arial,
+		sans-serif;
+}

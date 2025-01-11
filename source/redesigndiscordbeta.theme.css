@@ -2,7 +2,7 @@
  * @name Redesign Discord Beta
  * @description Discord, redesigned (beta version)
  * @author Berzec
- * @version 3.0.00.beta2.3
+ * @version 3.0.00.beta2.4
  *
  * @website https://github.com/Berzec
  * @invite 5W2kGk6Ku2
@@ -37,6 +37,8 @@ light mode
 
 	/* amount of spacing and padding */
 	--spacing: 15px;
+	--spacing-medium: 8px;
+	--spacing-small: 5px;
 
   	/* round corner standard */ 
 	--radius: 15px;
@@ -44,16 +46,12 @@ light mode
 	--radius-small: 5px;
 	--circle: 100%;
 
-	/* color of links */
+	/* color of links and unread dividers and some indicators */
 	--accent-1: #5680d4;
-	/* color of unread dividers and some indicators */
-	--accent-2: #5680d4;
 	/* color of accented buttons */
-	--accent-3: rgba(255, 255, 255,0.1);
-	/* color of accented buttons when hovered */
-	--accent-4: rgba(255, 255, 255,0.2);
-	/* color of accented buttons when clicked */
-	--accent-5: rgba(255, 255, 255,0.2);
+	--accent-2: rgba(255, 255, 255,0.1);
+	/* color of accented buttons when hovered and clicked */
+	--accent-3: rgba(255, 255, 255,0.2);
 	/* color of mentions and messages that mention you */
 	--mention: rgba(100, 150, 250, 0.1);
 	/* color of replying message */
@@ -115,6 +113,7 @@ light mode
 	--scrollbar-thin-thumb: var(--bg-5);
 	--scrollbar-thin-track: transparent;
 
+	--button-filled-brand-background: var(--original-blue);
 	--green-430: var(--original-blue);
 	--status-danger: var(--original-blue);
 
@@ -129,14 +128,15 @@ light mode
 .chatContent_a7d72e /* actual chat */,
 .replyBar_b11c5e, .stackedBars_bdf0de /* reply */,
 .buttonsInner_d5deea.popover_e986d9.popoverReactionHoverBar_e986d9.wrapper_f7e168, .hoverBarButton_e986d9.button_f7e168, .menu_d90b3d.flexible_d90b3d, .item_d90b3d, .submenu_d90b3d.menu_d90b3d /* messages more options */,
-.container_c2739c /* friends */,
+.container_c2739c, .blockedIgnoredSettingsNotice_e40e0c, .item_c2739c, .button_ecc1b2.button_dd4f85 /* friends */,
 .applicationStore_cecc86 /* nitro */,
 .item_f3abf4.item_a0.themed_a0, .messageRequestItem_a5de62, .button_deb497.button_dd4f85 /* message request items */,
 .privateChannels_f0963d /* dm list */, 
 .container_ee69e0 /* server channel list */,
+.header_fd6364, .menu_d90b3d  /* server name header */,
 .animatedContainer_fd6364 /* server channel list banner */,
 .panel_c69a7b /* dm user panel */, 
-.root_b9fccc, .button_f9d37d, .connectedAccountContainer_ab12c6, .container_ecc04c, .overlay_c69a7b  /* user profile expanded */,
+.root_b9fccc, .button_f9d37d, .connectedAccountContainer_ab12c6, .container_ecc04c, .overlay_c69a7b, .textarea_dde0a8 /* user profile expanded */,
 .outer_c69a7b, .inner_c69a7b, .pill_e6f2d0, .pill_f9575e /* user profile mini */,
 .container_b64375 /* profile badges */,
 .wrapper_fea3ef /* servers list */, 
@@ -191,6 +191,10 @@ light mode
 .container_d746e5 /* discover */  {
 	margin: 0 var(--spacing) var(--spacing) 0;
 }
+
+.textarea_dde0a8.inputDefault_f8bc55.input_f8bc55.scrollbarGhostHairline_c858ce.scrollbar_c858ce  /* add a note */ {
+	padding: var(--spacing-medium);
+}
 .container_c2739c .container_fc4f04.themed_fc4f04 /* fix friends header padding issue */,
 .subtitleContainer_a7d72e .container_fc4f04.themed_fc4f04 /* fix chat header padding issue */ {
 	padding: 8px;
@@ -213,6 +217,17 @@ light mode
 }
 .footer_d71945 /* discover button spacing fix */ {
     margin-bottom: 3px;
+}
+.container_a15d29, .uploadInput_a15d29 /* forum upload image */ {
+	margin-top: 20px;
+
+}
+.inputDefault_f8bc55.input_f8bc55.textArea_a2b402.scrollbarDefault_c858ce.scrollbar_c858ce.title_c1668f.scrollbarGhostHairline_c858ce.scrollbar_c858ce /* forum title text field */ {
+	margin-bottom: var(--spacing-medium);
+}
+.inner_bdf0de.sansAttachButtonCreatePost_bdf0de /* forum title post text field */ {
+	padding-left: var(--spacing-medium);
+	padding-top: var(--spacing-medium);
 }
 
 /* chat text input */
@@ -322,14 +337,27 @@ light mode
 .scrollableContainer_bdf0de, .replyBar_b11c5e, .stackedBars_bdf0de, .channelTextArea_a7d72e,
 .button_df39bd,
 .section_d8eba3,
-.searchBar_a46bef, .searchBarComponent_f0963d, .inner_c18ec9 {
+.searchBar_a46bef, .searchBarComponent_f0963d, .inner_c18ec9,
+.textarea_dde0a8.inputDefault_f8bc55.input_f8bc55.scrollbarGhostHairline_c858ce.scrollbar_c858ce {
 	background-color: var(--bg-5) !important;
 }
 
-/* background color hover */
-.memberInner_a31c43:hover /* member list */,
-.item_d90b3d.labelContainer_d90b3d.colorDefault_d90b3d.focused_d90b3d:hover, .focused_d90b3d /* menu selector */ {
-	background-color: var(--hover) !important;
+
+
+
+/* hovers */
+
+.item_d90b3d.labelContainer_d90b3d.colorDefault_d90b3d.focused_d90b3d /* server header menu */ {
+	background-color: var(--hover);
+}
+.colorBrand_d90b3d.focused_d90b3d /* server header menu with branding */ {
+	background-color: var(--accent-1) !important;
+}
+.colorBrand_d90b3d {
+	color: var(--accent-1);
+}
+.colorDanger_d90b3d.focused_d90b3d /* server header menu status danger */ {
+	background-color: var(--status-danger) !important;
 }
 
 /* color branding */
@@ -341,14 +369,21 @@ light mode
     color: var(--original-blue);
 }
 .circleIconButton_db6521.selected_db6521{
-    background-color: var(--accent-5);
+    background-color: var(--accent-3);
 }
 .newMessagesBar_cf58b5.barBase_cf58b5 /* unread pill */ {
 	background-color: var(--accent-1);
 	z-index: 100;
 }
-
-
+.newPostsButton_a6d69a div /* forum new posts */ {
+	--text-brand: var(--accent-1);
+}
+.button_ecc1b2.button_dd4f85.colorBrand_dd4f85 /* accept friend request */ {
+	--button-filled-brand-background: var(--accent-1);
+}
+.numberBadge_df8943 /* number badge */ {
+	--status-danger: var(--accent-1);
+}
 
 
 .notice_be03aa.colorCustom_be03aa.colorInfo_be03aa /* top notice banner discord survey */ {
@@ -372,15 +407,12 @@ light mode
 
 /* button colors */
 .button_f9d37d.button_dd4f85.lookFilled_dd4f85.colorPrimary_dd4f85.themeColor_f9d37d.primary_f9d37d.sizeSmall_dd4f85.grow_dd4f85 {
-	background-color: var(--accent-3);
+	background-color: var(--accent-2);
 }
 
 .isUnread_c2654d .content_c2654d, .content_c2654d /* date dividers */{
 	color: var(--text-light);
 }
-
-
-
 
 
 
@@ -481,6 +513,22 @@ html:not(.app-focused) .typeWindows_a934d8 .winButton_a934d8.winButtonMinMax_a93
   	background-color: var(--window-button-inactive);
 }
 
+
+
+
+
+
+
+
+
+
+
+/* SETTINGS */
+
+
+/* BORDER RADIUS */
+
+/* COLOR */
 
 
 

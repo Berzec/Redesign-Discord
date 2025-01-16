@@ -2,14 +2,12 @@
  * @name Redesign Discord Beta
  * @description Discord, redesigned (beta version)
  * @author Berzec
- * @version 3.0.00.beta2.4
- *
+ * @version 3.0.00.beta2.5
  * @website https://github.com/Berzec
- * @invite 5W2kGk6Ku2
 */
 
 
-/* NOTICE - please use dark mode, light mode is wonky */
+/* notice - originally designed for dark mode */
 
 
 
@@ -44,22 +42,26 @@ light mode
 	--radius: 15px;
 	--radius-medium: 8px;
 	--radius-small: 5px;
-	--circle: 100%;
+	--circle: 100%; /* no idea if this works */
 
-	/* color of links and unread dividers and some indicators */
+	/* blue things */
 	--accent-1: #5680d4;
-	/* color of accented buttons */
+	/* dark things */
 	--accent-2: rgba(255, 255, 255,0.1);
-	/* color of accented buttons when hovered and clicked */
+	/* dark things clicked */
 	--accent-3: rgba(255, 255, 255,0.2);
-	/* color of mentions and messages that mention you */
+	/* hovers */
+	--accent-4: rgba(40, 40, 40, 0.9);
+	/* buttons general */
+	--button: rgba(34, 38, 46, 1);
+	/* buttons general clicked */
+	--button-select: rgba(34, 38, 46, 1);
+	/* mentions and pings */
 	--mention: rgba(100, 150, 250, 0.1);
-	/* color of replying message */
+	/* replies */
 	--reply: rgba(150, 175, 255, 0.1);
-	/* color of mentions and messages that mention you when hovered */
+	/* mentions but hovered */
 	--mention-hover: rgba(100, 150, 250, 0.2);
-  	/* color of specific buttons */
-  	--accent-x: rgba(86, 128, 212, 0.8);
 
 	/* color of bright text */
 	--text-light: #e0e0e0;
@@ -70,22 +72,17 @@ light mode
 	/* color of text on bright background */
 	--text-dark: rgba(30, 50, 100, 0.9);
 
-	/* color of dark buttons when clicked */
-	--bg-1: rgba(34, 38, 46, 1);
-	/* color of dark buttons */
-	--bg-2: rgba(34, 38, 46, 1);
+
 	/* background color bottom (dark) */
-	--bg-3: #131313;
+	--bg-1: #131313;
 	/* background color top (light) */
-	--bg-4: #1a1a1a;
+	--bg-2: #1a1a1a;
 	/* background color top top (lighter) */
-	--bg-5: #252525;
-	/* color of channels and icon buttons when hovered */
-	--hover: rgba(40, 40, 40, 0.9);
-	/* color of channels and icon buttons when clicked or selected */
+	--bg-3: #252525;
+	/* selected items */
 	--active: rgba(100, 150, 250, 0.1);
-	/* color of messages when hovered */
-	--message-hover: rgba(255, 255, 255, 0.06);
+	/* messages hovered */
+	--message-hover: rgba(255, 255, 255, 0.04);
 	/* color of replying message when hovered */
 	--reply-hover: rgba(100, 150, 250, 0.2);
 	/* color of switches when clicked */
@@ -108,9 +105,12 @@ light mode
 
 	/* DISCORD VARIABLES */
 
-	--scrollbar-auto-thumb: var(--bg-5);
+}
+
+.theme-dark {
+	--scrollbar-auto-thumb: var(--bg-3);
 	--scrollbar-auto-track: transparent;
-	--scrollbar-thin-thumb: var(--bg-5);
+	--scrollbar-thin-thumb: var(--bg-3);
 	--scrollbar-thin-track: transparent;
 
 	--button-filled-brand-background: var(--original-blue);
@@ -118,6 +118,14 @@ light mode
 	--status-danger: var(--original-blue);
 
 	--custom-notice-background: var(--original-blue);
+
+	--status-danger: var(--original-blue);
+	--text-positive: var(--accent-1);
+	
+}
+.theme-light {
+	--status-danger: var(--original-blue);
+	--text-positive: var(--accent-1); 
 }
 
 
@@ -126,6 +134,7 @@ light mode
 .panels_a4d4d9, .container_b2ca13, .button_adca65, .avatarWrapper_b2ca13 /* account and settings at bottom */,
 .chat_a7d72e /* general chat area, all */,
 .chatContent_a7d72e /* actual chat */,
+.message_d5deea /* chat messages */,
 .replyBar_b11c5e, .stackedBars_bdf0de /* reply */,
 .buttonsInner_d5deea.popover_e986d9.popoverReactionHoverBar_e986d9.wrapper_f7e168, .hoverBarButton_e986d9.button_f7e168, .menu_d90b3d.flexible_d90b3d, .item_d90b3d, .submenu_d90b3d.menu_d90b3d /* messages more options */,
 .container_c2739c, .blockedIgnoredSettingsNotice_e40e0c, .item_c2739c, .button_ecc1b2.button_dd4f85 /* friends */,
@@ -133,9 +142,11 @@ light mode
 .item_f3abf4.item_a0.themed_a0, .messageRequestItem_a5de62, .button_deb497.button_dd4f85 /* message request items */,
 .privateChannels_f0963d /* dm list */, 
 .container_ee69e0 /* server channel list */,
+.modal_de766b /* channel description modal */,
 .header_fd6364, .menu_d90b3d  /* server name header */,
 .animatedContainer_fd6364 /* server channel list banner */,
 .panel_c69a7b /* dm user panel */, 
+.recentMentionsPopout_ddb5b4, .messageContainer_ddb5b4, .messages_c06487, .channelHeader_f3978e, .jumpButton_ac3dc2, .message_c06487 /* inbox */,
 .root_b9fccc, .button_f9d37d, .connectedAccountContainer_ab12c6, .container_ecc04c, .overlay_c69a7b, .textarea_dde0a8 /* user profile expanded */,
 .outer_c69a7b, .inner_c69a7b, .pill_e6f2d0, .pill_f9575e /* user profile mini */,
 .container_b64375 /* profile badges */,
@@ -191,6 +202,24 @@ light mode
 .container_d746e5 /* discover */  {
 	margin: 0 var(--spacing) var(--spacing) 0;
 }
+.channelHeader_f3978e /* inbox */ {
+	z-index: 100;
+	padding: 0 var(--spacing-medium) 0 var(--spacing-medium);
+	margin-top: var(--spacing);
+}
+.channelHeader_f3978e .icon_a64689 {
+	margin-left: var(--spacing);
+}
+.collapseButton_d09ffd {
+	margin-left: var(--spacing-medium);
+}
+.jumpButton_ac3dc2 {
+	z-index: 500;
+	margin-right: var(--spacing-small);
+}
+.message_c06487 {
+	padding-bottom: var(--spacing-small) !important;
+}
 
 .textarea_dde0a8.inputDefault_f8bc55.input_f8bc55.scrollbarGhostHairline_c858ce.scrollbar_c858ce  /* add a note */ {
 	padding: var(--spacing-medium);
@@ -230,10 +259,26 @@ light mode
 	padding-top: var(--spacing-medium);
 }
 
+/* message margins */
+.message_d5deea {
+	margin-left: var(--spacing);
+	padding-bottom: var(--spacing-small) !important;
+}
+.message_d5deea.mentioned_d5deea::before,
+.message_d5deea.replying_d5deea::before {
+	width: 15px;
+	border-radius: var(--radius) 0 0 var(--radius);
+}
+/* fix mention and reply message contents */
+.message_d5deea.mentioned_d5deea .contents_f9f2ca, .message_d5deea.mentioned_d5deea .avatar_f9f2ca, .message_d5deea.mentioned_d5deea .container_b558d0,
+.message_d5deea.replying_d5deea .contents_f9f2ca, .message_d5deea.replying_d5deea .avatar_f9f2ca, .message_d5deea.replying_d5deea .container_b558d0, .message_d5deea.replying_d5deea .repliedMessage_f9f2ca  {
+	margin-left: var(--spacing);
+}
+
 /* chat text input */
 .form_a7d72e .channelTextArea_a7d72e {
 	position: sticky;
-	border-top: var(--bg-4) 10px;
+	border-top: var(--bg-2) 10px;
 	margin-bottom: var(--spacing);
 	width: 100%;
 	box-sizing: border-box;
@@ -261,11 +306,11 @@ light mode
 	transition: 200ms ease-in-out;
 }
 .typing_d7ebeb.base_d7ebeb {
-	background-color: var(--bg-4);
+	background-color: var(--bg-2);
 }
 /* slowmode is enabled tab (same as typing indicator) */
 .cooldownWrapper_d7ebeb {
-	background-color: var(--bg-4);
+	background-color: var(--bg-2);
 	padding-left: var(--spacing);
 	padding-right: var(--spacing);
 	margin-bottom: calc(var(--spacing) - 5px);
@@ -276,7 +321,7 @@ light mode
 	position: absolute;
 	display: block;
 	margin-right: auto;
-	margin-left: 0;
+	margin-left: var(--spacing-small);
 	z-index: 110;
 	width: max-content;
 	background-color: none;
@@ -311,7 +356,7 @@ light mode
 .container_c2739c, .container_fc4f04, .container_bf550a,
 .scroller_a8b566, 
 .body_b9fccc, .headerInner_b9fccc, .inner_c69a7b  {
-    background-color: var(--bg-3) !important;
+    background-color: var(--bg-1) !important;
 }
 
 /* background color top */
@@ -319,9 +364,10 @@ light mode
 .title_a7d72e,
 .chatContent_a7d72e,
 .privateChannels_f0963d,
+.recentMentionsPopout_ddb5b4, .messageContainer_ddb5b4, .messages_c06487,
 .scroller_c47fa9,
 .container_b2ca13, .panels_a4d4d9, .panel_bf1a22.activityPanel_a4d4d9,
-.container_ee69e0,
+.container_ee69e0, 
 .members_cbd271, .container_cbd271,
 .itemsContainer_fea3ef, 
 .footer_d71945,
@@ -331,24 +377,36 @@ light mode
 .container_ecc04c, .overlay_c69a7b,
 .memberInner_a31c43, .member_a31c43,
 .container_e462a4, .scroller_b91a2d.thin_c49869.scrollerBase_c49869, .backdrop_accde0 {
-    background-color: var(--bg-4) !important;
+    background-color: var(--bg-2) !important;
 }
 /* background color more top */
-.scrollableContainer_bdf0de, .replyBar_b11c5e, .stackedBars_bdf0de, .channelTextArea_a7d72e,
+.scrollableContainer_bdf0de, .replyBar_b11c5e, .stackedBars_bdf0de, .channelTextArea_a7d72e, .channelHeader_f3978e,
 .button_df39bd,
-.section_d8eba3,
+.section_d8eba3, .modal_de766b,
 .searchBar_a46bef, .searchBarComponent_f0963d, .inner_c18ec9,
 .textarea_dde0a8.inputDefault_f8bc55.input_f8bc55.scrollbarGhostHairline_c858ce.scrollbar_c858ce {
-	background-color: var(--bg-5) !important;
+	background-color: var(--bg-3) !important;
 }
 
 
-
+.buttonsInner_d5deea {
+	background-color: var(--accent-4);
+}
 
 /* hovers */
 
+.message_d5deea:hover /* chat message hover */ {
+	background-color: var(--message-hover) !important;
+}
+.message_d5deea.mentioned_d5deea:hover /* chat mention message hover */ {
+	background-color: var(--mention-hover);
+}
+.message_c06487:hover {
+	background-color: var(--message-hover);
+}
+
 .item_d90b3d.labelContainer_d90b3d.colorDefault_d90b3d.focused_d90b3d /* server header menu */ {
-	background-color: var(--hover);
+	background-color: var(--accent-4);
 }
 .colorBrand_d90b3d.focused_d90b3d /* server header menu with branding */ {
 	background-color: var(--accent-1) !important;
@@ -390,14 +448,14 @@ light mode
 	--custom-notice-background: var(--original-blue);
 }
 
-/* embed colors */
+/* embed left branding colors ( the ::before part) */
 .embedWrapper_b558d0 {
-	border-left: 11px solid green;
+	border-left: 11px solid var(--accent-1) !important;
 	z-index: 50;
 }
 .gridContainer_b0068a {
 	z-index: 100;
-	background-color: var(--bg-5);
+	background-color: var(--bg-3);
 	border-radius: 0 var(--radius) var(--radius) 0;
 }
 
